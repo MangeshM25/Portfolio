@@ -23,10 +23,10 @@ header {
     padding: 10px 20px;
     background-color: #333;
     color: #fff;
-    /*position: sticky;*/
+    position: sticky;
     top: 0;
     z-index: 1000;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Adding shadow for a modern look */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 header .logo {
@@ -38,23 +38,39 @@ header .logo {
 header .logo img {
     width: 60px;
     height: auto;
-    transition: transform 0.3s; /* Adding transition effect to the logo */
+    transition: transform 0.3s;
 }
 
 header .logo img:hover {
-    transform: rotate(360deg); /* Hover effect for logo */
+    transform: rotate(360deg);
 }
 
+/* Menu styles */
 header nav {
     display: flex;
     margin-right: 30px;
 }
 
 header nav ul {
+    display: none; /* Hidden by default on mobile */
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    background-color: #333;
+    padding: 15px 20px;
+    border-radius: 8px;
     list-style: none;
+    flex-direction: column;
+    gap: 15px;
+    opacity: 0;
+    transform: translateX(100%);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+header nav ul.active {
     display: flex;
-    align-items: center;
-    gap: 30px; /* Added space between items */
+    opacity: 1;
+    transform: translateX(0);
 }
 
 header nav ul li a {
@@ -66,14 +82,13 @@ header nav ul li a {
 }
 
 header nav ul li a:hover {
-    text-decoration: none;
-    color: #a67fc2; /* Adding hover color */
+    color: #a67fc2;
 }
 
 header nav ul li a::before {
     content: '';
     position: absolute;
-    width: 0%;
+    width: 0;
     height: 2px;
     background-color: #a67fc2;
     bottom: 0;
@@ -82,8 +97,9 @@ header nav ul li a::before {
 }
 
 header nav ul li a:hover::before {
-    width: 100%; /* Underline animation on hover */
+    width: 100%;
 }
+
 
 /* Home Section */
 #home {
@@ -97,6 +113,7 @@ header nav ul li a:hover::before {
 
 .home-content {
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
     width: 100%;
     align-items: center;
@@ -167,30 +184,118 @@ footer {
 }
 
 /* Responsive Design */
+/* Mobile menu and icon setup */
 @media (max-width: 768px) {
-    header {
-        flex-direction: column;
-    }
-
-    header nav ul {
-        flex-direction: column;
-        align-items: center;
+    /* Show the hamburger icon and hide the nav by default */
+    .menu-icon {
+        display: block; /* Show only on small screens */
+        cursor: pointer;
+        font-size: 30px;
+        color: #fff;
+        position: relative;
+        z-index: 1001;
+        transition: transform 0.3s ease;
     }
 
     #home {
         flex-direction: column;
+        padding: 50px 20px;
         text-align: center;
     }
 
+    .home-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
     .intro-image img {
-        width: 300px;
+        width: 80%;
         margin-top: 20px;
     }
 
     .intro h2 {
         font-size: 28px;
     }
+
+    /* Hide menu by default */
+    header nav ul {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        background-color: #333;
+        padding: 15px;
+        border-radius: 8px;
+        gap: 10px;
+        opacity: 0;
+        transform: translateX(100%);
+        transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+
+    /* Show the nav when active */
+    header nav ul.active {
+        display: flex;
+        opacity: 1;
+        transform: translateX(0);
+    }
+    /* #about {
+        flex-direction: column;
+        padding: 50px 20px;
+        text-align: center;
+    }*/
+
+    .about-text, .skills {
+        max-width: 100%;
+        margin: 20px 0;
+        text-align: center;
+    }
+
+    .about-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    
 }
+
+/* Hamburger icon lines and transformation into an "X" */
+.menu-icon span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    background-color: #fff;
+    transition: all 0.3s ease;
+}
+
+.menu-icon.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.menu-icon.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-icon.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* Scaling down images on smaller screens */
+@media (max-width: 480px) {
+    .intro-image img {
+        width: 80%; /* Reduces image size on small screens */
+    }
+
+    .intro h2, .section-title {
+        font-size: 24px;
+    }
+
+    .intro p, .service-box p {
+        font-size: 14px;
+    }
+}
+
 
 /* About Section */
 #about {
@@ -204,13 +309,14 @@ footer {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
+    gap: 50px;
 }
 
 /* About Text (Left) */
 .about-text {
     flex: 1;
     max-width: 600px;
-    margin-right: 50px;
+    /*margin-right: 50px;*/
 }
 
 .about-text h2 {
