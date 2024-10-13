@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Mangesh Marne - Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+
+
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="logo">
+            <img src="Images/Logo.png" alt="Mangesh Logo" id="site-logo">
+        </div>
+        
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About Me</a></li>
+                <li><a href="#services">Services</a></li>
+                <!-- <li><a href="#resume">Resume</a></li> -->
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        
+        <!-- Updated Menu Icon with three spans for animated hamburger lines -->
+        <div class="menu-icon" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </header>
+    
+    <!-- JavaScript for toggling menu -->
+    <script>
+        function toggleMenu() {
+            const nav = document.querySelector('header nav ul');
+            const menuIcon = document.querySelector('.menu-icon');
+            
+            // Toggle 'active' class for smooth animations
+            nav.classList.toggle('active');
+            menuIcon.classList.toggle('active');
+        }
+    </script>
+    
+
+
+    <!-- Main Content -->
+    <section id="home">
+        <div class="home-content">
+            <!-- Left: Introduction -->
+            <div class="intro">
+                <h2>Hello, I'm <span>Mangesh Marne</span></h2>
+                <p>Welcome to my portfolio! I'm a junior web designer and developer, passionate about crafting visually appealing, user-friendly, and responsive websites. Specializing in UI design, visual development, and creating dynamic digital experiences, my focus is on building websites that not only look great but also provide seamless functionality across all devices. Let's bring your ideas to life with clean, modern, and engaging web design.</p>
+                <!-- Resume Download Button -->
+                <a href="Mangesh Marne.pdf" download class="resume-btn">Download Resume</a>
+            </div>
+
+            <!-- Right: Image -->
+            <div class="intro-image">
+                <img src="Images/image.png" alt="Coding Illustration">
+            </div>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="about-container">
+            <!-- Left Section: About Text -->
+            <div class="about-text">
+                <h2>About Me</h2>
+                <h3>Who am I?</h3>
+                <p>I'm Mangesh Marne, a Software Engineer & Web Designer.</p>
+                <p>As a dedicated software engineer with 3 years of experience, including a role at Capgemini, I specialize in automating business processes, optimizing web development workflows, and streamlining data management. My expertise spans technologies such as HTML, JavaScript, React, VBA, ASP.NET, and SQL, enabling me to deliver efficient and scalable solutions.</p>
+                <p>I have successfully contributed to key projects, including the development of a Dynamic Portfolio Website using React, showcasing modern UI/UX practices, and a Business Analytics Dashboard built with ASP.NET and SQL, providing real-time data insights. Additionally, I have created an Automated Reporting System that integrated SQL and VBA to streamline complex reporting processes.</p>
+                <h4>Connect With Me</h4>
+                <div class="social-icons">
+                    <a href="mailto:mangeshmarne786m@gmail.com" target="_blank">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/mangesh-marne-559b43222?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="https://www.instagram.com/infernomax?igsh=cW1tY3NidThiOHM0&utm_source=qr" target="_blank">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </div>
+            </div>
+    
+            <!-- Right Section: Skills -->
+            <div class="skills">
+                <div class="skill">
+                    <h4>HTML & CSS <span>90%</span></h4>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 90%;"></div>
+                    </div>
+                </div>
+                <div class="skill">
+                    <h4>JavaScript <span>95%</span></h4>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 95%;"></div>
+                    </div>
+                </div>
+                <div class="skill">
+                    <h4>React <span>80%</span></h4>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 80%;"></div>
+                    </div>
+                </div>
+                <div class="skill">
+                    <h4>VBA <span>75%</span></h4>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 75%;"></div>
+                    </div>
+                </div>
+                <div class="skill">
+                    <h4>ASP.NET <span>85%</span></h4>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 85%;"></div>
+                    </div>
+                </div>
+                <div class="skill">
+                    <h4>SQL <span>90%</span></h4>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 90%;"></div>
+                    </div>
+                </div>
+                <div class="skill">
+                    <h4>Automation <span>80%</span></h4>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 80%;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+
+    <section id="services">
+        <div class="services-container">
+          <h2 class="section-title">Services</h2>
+          <div class="services-grid">
+            <div class="service-box animate-on-scroll">
+              <div class="icon"><i class="fas fa-globe"></i></div>
+              <h3>Web Development</h3>
+              <p>Custom web solutions tailored to meet your unique needs, built using cutting-edge technologies like HTML5, CSS3, JavaScript, and more.</p>
+            </div>
+            <div class="service-box animate-on-scroll">
+              <div class="icon"><i class="fas fa-mobile-alt"></i></div>
+              <h3>Mobile Development</h3>
+              <p>Native mobile apps for iOS and Android, designed for a seamless user experience and integrated with your existing systems.</p>
+            </div>
+            <div class="service-box animate-on-scroll">
+              <div class="icon"><i class="fas fa-paint-brush"></i></div>
+              <h3>Graphic Design</h3>
+              <p>Eye-catching graphics, logos, icons, and infographics that communicate your brand values and enhance your online presence.</p>
+            </div>
+            <div class="service-box animate-on-scroll">
+              <div class="icon"><i class="fas fa-laptop-code"></i></div>
+              <h3>Backend Development</h3>
+              <p>Robust, scalable backend systems powering your web or mobile applications, developed using languages like Python, Ruby, PHP, and Node.js.</p>
+            </div>
+            <div class="service-box animate-on-scroll">
+              <div class="icon"><i class="fas fa-desktop"></i></div>
+              <h3>Web Design</h3>
+              <p>User-friendly website designs prioritizing UX and UI, using the latest trends to engage visitors and drive conversions.</p>
+            </div>
+            <div class="service-box animate-on-scroll">
+              <div class="icon"><i class="fas fa-user-alt"></i></div>
+              <h3>UI/UX Design</h3>
+              <p>Intuitive interface design balancing form and function, tested and refined through research to ensure a seamless experience.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    
+      <script>
+        // Scroll-based animation
+        function animateOnScroll() {
+          const elements = document.querySelectorAll('.animate-on-scroll');
+          
+          elements.forEach((el) => {
+            const position = el.getBoundingClientRect();
+            if (position.top < window.innerHeight && position.bottom > 0) {
+              el.classList.add('visible');
+            } else {
+              el.classList.remove('visible');
+            }
+          });
+        }
+      
+        window.addEventListener('scroll', animateOnScroll);
+        window.addEventListener('load', animateOnScroll);  // Trigger when the page loads
+      </script>
+      
+      
+
+    <!--<section id="resume">
+        <h2>Resume</h2>
+        <p>Here you can find my professional background and achievements.</p>
+    </section>-->
+
+   <!-- Contact Section -->
+<section id="contact">
+    <h2>Contact Me</h2>
+    <p>If you have any questions or want to work together, feel free to reach out!</p>
+
+    <div class="contact-form">
+        <form action="your-form-handler-url" method="post">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" placeholder="Your Name" required>
+            
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="Your Email" required>
+            
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
+            
+            <button type="submit">Send Message</button>
+        </form>
+    </div>
+
+    <div class="contact-icons">
+        <a href="mailto:mangeshmarne786m@gmail.com" target="_blank">
+            <i class="fas fa-envelope"></i> <!-- Font Awesome Icon for Email -->
+        </a>
+        <a href="https://www.linkedin.com/in/mangesh-marne-559b43222" target="_blank">
+            <i class="fab fa-linkedin"></i> <!-- Font Awesome Icon for LinkedIn -->
+        </a>
+        <a href="https://www.instagram.com/infernomax" target="_blank">
+            <i class="fab fa-instagram"></i> <!-- Font Awesome Icon for Instagram -->
+        </a>
+    </div>
+</section>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>© 2024 Mangesh Marne. All rights reserved.</p>
+    </footer>
+</body>
+</html>
